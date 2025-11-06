@@ -41,7 +41,7 @@ can mitigate heterogeneity by enabling clients to update with a global perspecti
 If our work is useful for your research, please consider citing:
 
     @inproceedings{
-        yang2023fedfed,
+        yang2025fedgps,
         title={FedGPS: Statistical Rectification Against Data Heterogeneity in Federated Learning},
         author={Yang, Zhiqin and Zhang, Yonggang and Li, Chenxin and Cheung, Yiu-ming and Han, Bo and Yuan, Yixuan},
         booktitle={Thirty-Ninth Conference on Neural Information Processing Systems},
