@@ -28,7 +28,7 @@ model_feature_dim: 512
 surrogate_alpha: 1.0
 surrogate_num: 10 # class number of surrogate dataset
 surrogate_dataset_list: ["c10"]
-generative_dataset_root_path: '/data/zqy/Surrogate_data'
+generative_dataset_root_path: '../Surrogate_data'
 surrogate_dataset_batch_size: 128
 dataset_image_size: 32
 dataloader_workers: 0
