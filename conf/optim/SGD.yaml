@@ -1,0 +1,7 @@
+optim_name: 'SGD'
+
+lr: 0.01
+momentum: 0.9
+wd: 0.00001
+
+nesterov: False

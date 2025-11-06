@@ -1,0 +1,4 @@
+
+
+algorithm_name: 'FedAvg'
+local_epochs: 1

@@ -1,0 +1,43 @@
+defaults:
+  - algorithms: fedgps
+  - optim: SGD
+  - datasets: CIFAR10
+
+gpu_list: [3]  # [0,1]
+process_PID: None
+seed: 0
+train_seed: 0
+
+global_round: 500
+client_number: 10
+client_number_per_round: 5
+model: 'resnet18'
+bs: 64
+partition_alpha: 0.1
+partition_method: 'hetero'
+task: 'classification'
+
+use_gradient_clipping: False
+max_norm: 10.0
+share_with_nongrad: True
+
+long_tail: False
+long_tail_imb_factor: 0.1
+
+imperfect_scenario:
+  type: 'general' # 'pl': partial label, 'nl': noisy label, ['pl','nl']: noisy+paritial label
+  
+  clients_ulb_ratio: [0.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0,1.0, 1.0]
+  
+  noise_type: 'symmetric'  # 'symmetric',  'pairflip',  'random'
+  noise_inclient: False
+  random_nl_ratio: [0.6, 0.5] # work if noise_rype == 'random' [level_n_system, level_n_lowerb]
+  noise_ratio: 0.4
+
+record: True
+log_level: 'INFO'  # 'INFO' or 'DEBUG'
+record_tool: 'wandb' # 'wandb' or 'tensorboard'
+wandb_project: 'opensource_test'
+# wandb_run: 'fedexp symmetric 1ep bs=64 with data augmentation'
+tensorboard_dir: '/output/tensorboard/logs'
+extra_info: ''

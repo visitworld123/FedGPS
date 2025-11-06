@@ -1,0 +1,42 @@
+algorithm_name: 'BVAT'
+local_epochs: 1
+rho: 0.5
+lamb: 0.1
+max_norm: 10.0
+global_lr: 1.0
+bn_share: True
+use_good_model: False
+ema_decay: 0.9
+use_ema: False
+weighted_sum: False
+pre_selected_client_use_minus: True
+surrogate: True
+surrogate_data: 'dataset'
+surrogate_label_from: "dataset"
+surrogate_label_style: "extra"
+surrogate_label_shift: True
+surrogate_feat_align: True
+surrogate_inter_domain_mapping: False
+surrogate_class_match: True
+surrogate_feat_detach: True
+surrogate_noise_contrastive: True
+surrogate_feat_align_inter_domain_weight: 0.0
+surrogate_feat_align_inter_cls_weight: 1.0
+surrogate_noise_supcon_weight: 0.1
+surrogate_ft_prox_weight : 0.5
+model_feature_dim: 512
+surrogate_alpha: 1.0
+surrogate_num: 10 # class number of surrogate dataset
+surrogate_dataset_list: ["c10"]
+generative_dataset_root_path: '/data/zqy/Surrogate_data'
+surrogate_dataset_batch_size: 128
+dataset_image_size: 32
+dataloader_workers: 0
+use_minus_lesam: False
+same_symbol: True
+all_positive: True
+minuse_is_positive: True
+
+align_loss_weight: 0.1
+proto_types_align_method: 'mse'
+

@@ -1,0 +1,10 @@
+dataset_name: 'CIFAR100'
+
+image_resize: 32 # resize data into image_resize
+data_dir: '/data/zqy/data'
+dataset_image_size: 32 # original data size
+input_channels: 3
+
+# often the same
+num_classes: 100
+output_dim: 100
