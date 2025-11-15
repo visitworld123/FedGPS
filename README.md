@@ -25,9 +25,6 @@ can mitigate heterogeneity by enabling clients to update with a global perspecti
 ## The Table of Contents
 - [:grimacing: Dependencies and installation](#grimacing-dependencies-and-installation)
 - [:partying\_face: How to run:](#partying_face-how-to-run)
-- [:gem: Extension based on our code](#gem-extension-based-on-our-code)
-  - [:book: Main code structure](#book-main-code-structure)
-  - [:jigsaw: How to extend based on our code](#jigsaw-how-to-extend-based-on-our-code)
 - [:rose: Experimental results](#rose-experimental-results)
 - [:smiley: Citation](#smiley-citation)
 - [:closed\_book: License](#closed_book-license)
@@ -36,12 +33,45 @@ can mitigate heterogeneity by enabling clients to update with a global perspecti
 
 :wink: If FedGPS is helpful to you, please star this repo. Thanks! :hugs: 
 
+##  :grimacing: Dependencies and installation
+Before running or modifying the code, you need to:
+- Make sure Anaconda or Miniconda is installed.
+- Clone this repo to your machine.
+  
+  ```
+  # git clone this repository
+  git clone https://github.com/visitworld123/FedGPS
+  cd FedGPS
+
+  # create a new Anaconda env 
+  conda create -n FedGPS python=3.8 -y
+  conda activate FedGPS  
+  ```
+- required packages in `requirements.txt`
+  ```
+  # install python dependencies
+  pip install -r requirements.txt
+  ```
+## :partying_face: How to run:
+
+```
+python main.py --algorithms fedgps --datasets CIFAR10 --optim SGD 
+```
+
+In config.yaml, you can change the hyper-parameters and some settings. In our experiments, we use wandb as the default tool to record the running metrics like Acc and Loss. If you don't want to use wandb, you can set `record = False`. And if you want to use tensorboard to record, you can set `record_tool = 'tensorboard`.
+
+Please refer to the `./conf/config.yaml` file for the list of parameters. We conduct hyper-parameters management by [hydra](https://hydra.cc/docs/intro/), you can refer to this document to modify different settings and algorithms. 
+
+## :rose: Experimental results
+ <p align="center">
+    <img src="assets/result.png">
+</p>
 
 ## :smiley: Citation
 If our work is useful for your research, please consider citing:
 
     @inproceedings{
-        yang2025fedgps,
+        yang2023fedfed,
         title={FedGPS: Statistical Rectification Against Data Heterogeneity in Federated Learning},
         author={Yang, Zhiqin and Zhang, Yonggang and Li, Chenxin and Cheung, Yiu-ming and Han, Bo and Yuan, Yixuan},
         booktitle={Thirty-Ninth Conference on Neural Information Processing Systems},
